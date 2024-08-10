@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, nativeTheme } = require("electron");
 const path = require("node:path");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -18,9 +18,14 @@ const createWindow = () => {
     },
   });
 
+  // fetching current device theme and sending to react application
+  // const isDark = nativeTheme.shouldUseDarkColors;
+  // mainWindow.webContents.on("did-finish-load", () => {
+  //   mainWindow.webContents.send("device-theme", isDark ? "dark" : "light");
+  // });
+
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
   mainWindow.maximize();
 
   // Open the DevTools.
