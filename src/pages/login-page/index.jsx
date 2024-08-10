@@ -1,7 +1,8 @@
 import React from "react";
+import Loader from "../../components/loader/index.jsx";
 
 function LoginPage() {
-  return <div>Login Page</div>;
+  return <Loader />;
 }
 
 export default LoginPage;

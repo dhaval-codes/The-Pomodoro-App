@@ -1,5 +1,4 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("node:path");
+const { app, BrowserWindow, ipcMain, nativeTheme } = require("electron");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -15,6 +14,8 @@ const createWindow = () => {
     autoHideMenuBar: true,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      contextIsolation: true,
+      nodeIntegration: false,
     },
   });
 
@@ -27,6 +28,9 @@ const createWindow = () => {
   // mainWindow.webContents.openDevTools();
 };
 
+ipcMain.handle("get-device-theme", () => {
+  return nativeTheme.shouldUseDarkColors ? "dark" : "light";
+});
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
