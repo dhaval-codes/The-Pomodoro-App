@@ -20,6 +20,8 @@ import Carrousel from "../../components/carrousel/index.jsx";
 import GoogleLogo from "../../assets/icons/GoogleLogo.jsx";
 import QuestionCircle from "../../assets/icons/QuestionCircle.jsx";
 
+import { useNavigate } from "react-router-dom";
+
 //importing images for Carousle
 import Image1 from "../../assets/images/image1.png";
 import Image2 from "../../assets/images/image2.png";
@@ -28,6 +30,7 @@ import Image4 from "../../assets/images/image4.png";
 
 function LoginPage() {
   const ImageUrlMappingArray = [Image1, Image2, Image3, Image4];
+  const navigate = useNavigate();
 
   return (
     <PageWrpr>
@@ -39,7 +42,7 @@ function LoginPage() {
             <SecondaryTitle>
               start your distraction free study sessions with few simple steps
             </SecondaryTitle>
-            <SignInButton>
+            <SignInButton onClick={() => navigate("/landing-page")}>
               <GoogleLogo />
               <ButtonText>Login Using Google</ButtonText>
             </SignInButton>
