@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../src/assets/font/Inter-VariableFont_opsz\,wght.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body {
+  margin: 0;
 }
