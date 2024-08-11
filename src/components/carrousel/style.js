@@ -12,7 +12,7 @@ export const CarrouselCont = styled.div`
 
 export const Slide = styled.div`
   height: 100%;
-  width: ${(props) => (props.active ? "100%" : "0%")};
+  width: ${(props) => (props.active === true ? "100%" : "0%")};
   background-image: url(${(props) => props.imgurl});
   background-size: cover;
   background-position: center;
